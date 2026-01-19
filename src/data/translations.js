@@ -50,7 +50,7 @@ export const translations = {
       categories: [
         {
           name: 'Languages',
-          items: ['Python', 'C#', 'Java', 'C', 'C++', 'C', 'C++', 'Assembly', 'SQL', 'NoSQL'],
+          items: ['Python', 'C#', 'Java', 'C', 'C++', 'Assembly', 'SQL', 'NoSQL'],
         },
         {
           name: 'Technologies',
