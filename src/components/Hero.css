@@ -20,6 +20,7 @@
     position: absolute;
     border-radius: 50%;
     filter: blur(100px);
+    will-change: transform, opacity;
 }
 
 .hero__glow--1 {
@@ -28,6 +29,7 @@
     background: var(--accent-primary);
     top: -150px;
     right: -150px;
+    animation: glowPulse1 4s ease-in-out infinite;
 }
 
 .hero__glow--2 {
@@ -36,6 +38,35 @@
     background: #6366f1;
     bottom: -100px;
     left: -150px;
+    animation: glowPulse2 5s ease-in-out 1s infinite;
+}
+
+@keyframes glowPulse1 {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.15;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.25;
+    }
+}
+
+@keyframes glowPulse2 {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+
+    50% {
+        transform: scale(1.3);
+        opacity: 0.2;
+    }
 }
 
 .hero__grid {
@@ -55,6 +86,22 @@
     background: var(--accent-primary);
     border-radius: 50%;
     box-shadow: 0 0 10px var(--accent-primary);
+    will-change: transform, opacity;
+    animation: particleFloat 3s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translateY(-30px);
+        opacity: 0.7;
+    }
 }
 
 .hero__content {
@@ -71,6 +118,20 @@
     margin-bottom: 0.75rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    opacity: 0;
+    animation: heroFadeIn 0.6s ease forwards;
+}
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero__name {
@@ -78,27 +139,19 @@
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.hero__letter {
-    display: inline-block;
     background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 50%, var(--accent-secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    transition: transform 0.2s ease;
-}
-
-.hero__letter:hover {
-    transform: translateY(-5px) scale(1.1);
+    opacity: 0;
+    animation: heroFadeIn 0.6s ease 0.1s forwards;
 }
 
 .hero__title {
     font-size: clamp(1.25rem, 3vw, 1.75rem);
     margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: heroFadeIn 0.5s ease 0.3s forwards;
 }
 
 .hero__title-text {
@@ -116,6 +169,8 @@
     max-width: 500px;
     margin: 0 auto 2.5rem;
     line-height: 1.7;
+    opacity: 0;
+    animation: heroFadeIn 0.5s ease 0.4s forwards;
 }
 
 .hero__cta {
@@ -160,6 +215,19 @@
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
+    animation: floatIndicator 3s ease-in-out infinite;
+}
+
+@keyframes floatIndicator {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
 }
 
 .hero__scroll-mouse {
@@ -171,6 +239,19 @@
     justify-content: center;
     padding-top: 8px;
     transition: border-color var(--transition-fast);
+    animation: scrollBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
 }
 
 .hero__scroll-mouse:hover {
@@ -182,6 +263,56 @@
     height: 8px;
     background: var(--accent-primary);
     border-radius: 2px;
+    animation: wheelPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes wheelPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.hero__title-text {
+    background: linear-gradient(90deg, var(--accent-primary), #6366f1, var(--accent-secondary), var(--accent-primary));
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+    animation: gradientSlide 5s linear infinite;
+}
+
+@keyframes gradientSlide {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+.hero__cta-arrow {
+    display: inline-flex;
+    animation: arrowBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes arrowBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(4px);
+    }
 }
 
 @media (max-width: 768px) {

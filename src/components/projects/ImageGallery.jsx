@@ -1,10 +1,46 @@
-import { useState } from 'react';
+import { useState, memo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { FiChevronLeft, FiChevronRight, FiX, FiMaximize2 } from 'react-icons/fi';
 import './ImageGallery.css';
 
-export default function ImageGallery({ images, language }) {
+// Animation variants moved outside component
+const lightboxVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+    exit: { opacity: 0 }
+};
+
+const contentVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: { scale: 1, opacity: 1 },
+    exit: { scale: 0.8, opacity: 0 }
+};
+
+function ImageGallery({ images, language }) {
     const [selectedIndex, setSelectedIndex] = useState(null);
+
+    const openLightbox = useCallback((index) => {
+        setSelectedIndex(index);
+    }, []);
+
+    const closeLightbox = useCallback(() => {
+        setSelectedIndex(null);
+    }, []);
+
+    const goToPrevious = useCallback((e) => {
+        e.stopPropagation();
+        setSelectedIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    }, [images.length]);
+
+    const goToNext = useCallback((e) => {
+        e.stopPropagation();
+        setSelectedIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    }, [images.length]);
+
+    const handleDotClick = useCallback((e, index) => {
+        e.stopPropagation();
+        setSelectedIndex(index);
+    }, []);
 
     if (!images || images.length === 0) {
         return (
@@ -14,35 +50,15 @@ export default function ImageGallery({ images, language }) {
         );
     }
 
-    const openLightbox = (index) => {
-        setSelectedIndex(index);
-    };
-
-    const closeLightbox = () => {
-        setSelectedIndex(null);
-    };
-
-    const goToPrevious = (e) => {
-        e.stopPropagation();
-        setSelectedIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-    };
-
-    const goToNext = (e) => {
-        e.stopPropagation();
-        setSelectedIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-    };
-
     return (
         <>
             {/* Thumbnail Grid */}
             <div className="image-gallery">
                 <div className="image-gallery__grid">
                     {images.map((image, index) => (
-                        <motion.div
+                        <div
                             key={index}
                             className="image-gallery__item"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
                             onClick={() => openLightbox(index)}
                         >
                             <img
@@ -53,7 +69,7 @@ export default function ImageGallery({ images, language }) {
                             <div className="image-gallery__overlay">
                                 <FiMaximize2 />
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>
@@ -63,16 +79,18 @@ export default function ImageGallery({ images, language }) {
                 {selectedIndex !== null && (
                     <motion.div
                         className="lightbox"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
+                        variants={lightboxVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
                         onClick={closeLightbox}
                     >
                         <motion.div
                             className="lightbox__content"
-                            initial={{ scale: 0.8, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.8, opacity: 0 }}
+                            variants={contentVariants}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
                             onClick={(e) => e.stopPropagation()}
                         >
                             <button
@@ -114,10 +132,7 @@ export default function ImageGallery({ images, language }) {
                                         <button
                                             key={index}
                                             className={`lightbox__dot ${index === selectedIndex ? 'active' : ''}`}
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                setSelectedIndex(index);
-                                            }}
+                                            onClick={(e) => handleDotClick(e, index)}
                                             aria-label={`Go to image ${index + 1}`}
                                         />
                                     ))}
@@ -134,3 +149,5 @@ export default function ImageGallery({ images, language }) {
         </>
     );
 }
+
+export default memo(ImageGallery);

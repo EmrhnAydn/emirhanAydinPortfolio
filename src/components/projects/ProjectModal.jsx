@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, memo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { FiX, FiGithub, FiExternalLink, FiLock, FiBook, FiImage } from 'react-icons/fi';
 import { getProjectText } from '../../data/projectsData';
@@ -6,7 +6,22 @@ import ReadmeViewer from './ReadmeViewer';
 import ImageGallery from './ImageGallery';
 import './ProjectModal.css';
 
-export default function ProjectModal({ project, language, onClose }) {
+// Animation variants moved outside component
+const overlayVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+    exit: { opacity: 0 }
+};
+
+const modalVariants = {
+    hidden: { opacity: 0, scale: 0.9, y: 50 },
+    visible: { opacity: 1, scale: 1, y: 0 },
+    exit: { opacity: 0, scale: 0.9, y: 50 }
+};
+
+const springTransition = { type: "spring", damping: 25, stiffness: 300 };
+
+function ProjectModal({ project, language, onClose }) {
     const hasGithub = project?.github?.url;
     const hasReadme = project?.github?.showReadme;
     const hasImages = project?.images && project.images.length > 0;
@@ -17,13 +32,15 @@ export default function ProjectModal({ project, language, onClose }) {
     const description = getProjectText(project, 'description', language);
     const longDescription = getProjectText(project, 'longDescription', language);
 
+    // Memoized escape handler
+    const handleEscape = useCallback((e) => {
+        if (e.key === 'Escape') {
+            onClose();
+        }
+    }, [onClose]);
+
     // Close modal on Escape key
     useEffect(() => {
-        const handleEscape = (e) => {
-            if (e.key === 'Escape') {
-                onClose();
-            }
-        };
         document.addEventListener('keydown', handleEscape);
         document.body.style.overflow = 'hidden';
 
@@ -31,7 +48,9 @@ export default function ProjectModal({ project, language, onClose }) {
             document.removeEventListener('keydown', handleEscape);
             document.body.style.overflow = 'unset';
         };
-    }, [onClose]);
+    }, [handleEscape]);
+
+    const stopPropagation = useCallback((e) => e.stopPropagation(), []);
 
     if (!project) return null;
 
@@ -39,29 +58,28 @@ export default function ProjectModal({ project, language, onClose }) {
         <AnimatePresence>
             <motion.div
                 className="project-modal-overlay"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+                variants={overlayVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
                 onClick={onClose}
             >
                 <motion.div
                     className="project-modal"
-                    initial={{ opacity: 0, scale: 0.9, y: 50 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.9, y: 50 }}
-                    transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                    onClick={(e) => e.stopPropagation()}
+                    variants={modalVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    transition={springTransition}
+                    onClick={stopPropagation}
                 >
-                    {/* Header */}
+                    {/* Header - Compact sticky header with full title */}
                     <div className="project-modal__header">
                         <div className="project-modal__header-content">
                             <div className="project-modal__icon">
                                 {isPrivate ? <FiLock /> : hasGithub ? <FiGithub /> : <FiImage />}
                             </div>
-                            <div>
-                                <h2 className="project-modal__title">{title}</h2>
-                                <p className="project-modal__subtitle">{description}</p>
-                            </div>
+                            <h2 className="project-modal__title">{title}</h2>
                         </div>
 
                         <button
@@ -126,13 +144,13 @@ export default function ProjectModal({ project, language, onClose }) {
                                 <FiLock />
                                 <span>
                                     {language === 'tr'
-                                        ? 'Bu proje gizlilik anlaşması kapsamında olduğu için detaylar paylaşılamamaktadır.'
-                                        : 'This project is under NDA and details cannot be shared publicly.'}
+                                        ? 'Bu proje gizlidir.'
+                                        : 'This project is private.'}
                                 </span>
                             </div>
                         )}
 
-                        {/* Images Section - Now before README */}
+                        {/* Images Section */}
                         {hasImages && (
                             <div className="project-modal__section">
                                 <h3 className="project-modal__section-title">
@@ -142,7 +160,7 @@ export default function ProjectModal({ project, language, onClose }) {
                             </div>
                         )}
 
-                        {/* README Section - Now after Images */}
+                        {/* README Section */}
                         {hasReadme && !isPrivate && (
                             <div className="project-modal__section">
                                 <h3 className="project-modal__section-title">
@@ -157,3 +175,5 @@ export default function ProjectModal({ project, language, onClose }) {
         </AnimatePresence>
     );
 }
+
+export default memo(ProjectModal);

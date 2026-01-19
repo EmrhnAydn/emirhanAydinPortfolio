@@ -209,6 +209,12 @@
     transition: all var(--transition-fast);
 }
 
+.project-card__tech-tag:hover {
+    transform: scale(1.1);
+    background-color: rgba(139, 92, 246, 0.2);
+    color: #a78bfa;
+}
+
 /* View more hint */
 .project-card__hint {
     position: absolute;

@@ -26,6 +26,15 @@
     overflow: hidden;
     cursor: pointer;
     background: rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.image-gallery__item:hover {
+    transform: scale(1.05);
+}
+
+.image-gallery__item:active {
+    transform: scale(0.95);
 }
 
 .image-gallery__item img {

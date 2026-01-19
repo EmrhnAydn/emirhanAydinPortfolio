@@ -20,8 +20,8 @@ export const projects = [
         liveUrl: null,
         visibility: 'private',
         longDescription: {
-            en: '',
-            tr: ''
+            en: 'A locally running RAG-based search engine for internal documents developed within the scope of the TAI LIFT-UP graduation project',
+            tr: 'TUSAŞ LIFT-UP Bitirme projesi kapsamında geliştirilen Kurum içi dökümanlar için RAG Tabanlı lokalde çalışan arama motoru'
         }
     },
 
@@ -47,11 +47,11 @@ export const projects = [
 
         // Görseller (opsiyonel) - public klasöründe saklanacak
         images: [
-            '/projects/mufettisAgent/1.jpeg',
-            '/projects/mufettisAgent/2.jpeg',
-            '/projects/mufettisAgent/3.jpeg',
-            '/projects/mufettisAgent/5.jpeg',
-            '/projects/mufettisAgent/4.jpeg'
+            '/emirhanAydinPortfolio/projects/mufettisAgent/1.jpeg',
+            '/emirhanAydinPortfolio/projects/mufettisAgent/2.jpeg',
+            '/emirhanAydinPortfolio/projects/mufettisAgent/3.jpeg',
+            '/emirhanAydinPortfolio/projects/mufettisAgent/5.jpeg',
+            '/emirhanAydinPortfolio/projects/mufettisAgent/4.jpeg'
         ],
 
         // Demo/Live site linki (opsiyonel)
@@ -83,8 +83,8 @@ export const projects = [
         liveUrl: null,
         visibility: 'private',
         longDescription: {
-            en: '',
-            tr: ''
+            en: 'In the Agentic Café Chatbot project using a local LLM, users can chat with the chatbot and, with attention to natural language, add and remove any number of products to and from the cart, make purchases, and receive coffee recommendations; free APIs from platforms such as Groq and Ollama were used, along with FAISS and LangChain.',
+            tr: 'Yerel LLM ile Ajantik Kafe Chatbotu projesinde kullanıcı chatbot ile sohbet ederek doğal dile dikkat edilerek sepete istenilen kadar ürün ekleme ve çıkarma, satın alma, kavhe önerme gibi özellikler sunulmuştur groq ve ollama gibi api plartformlarından ücretsiz apiler ve faiss ve langchain kullanılmıştır.'
         }
     },
 
@@ -105,8 +105,8 @@ export const projects = [
         liveUrl: null,
         visibility: 'private',
         longDescription: {
-            en: '',
-            tr: ''
+            en: 'A terminal-based AI chatbot specialized in History, Art, and Cinema. It operates in two different modes: Basic mode and an advanced mode with LangChain integration.',
+            tr: 'Tarih, Sanat ve Sinema konularında uzmanlaşmış terminal tabanlı AI sohbet botu. İki farklı modda çalışır: Basit mod ve LangChain entegrasyonlu gelişmiş mod.'
         }
     },
 
@@ -187,9 +187,9 @@ export const projects = [
 
         // Görseller (opsiyonel) - public klasöründe saklanacak
         images: [
-            '/projects/fleetManagerRobotSimulation/random_map_gui.png',
-            '/projects/fleetManagerRobotSimulation/dar_koridor_modu.png',
-            '/projects/fleetManagerRobotSimulation/filo_analiz_raporu.png'
+            '/emirhanAydinPortfolio/projects/fleetManagerRobotSimulation/random_map_gui.png',
+            '/emirhanAydinPortfolio/projects/fleetManagerRobotSimulation/dar_koridor_modu.png',
+            '/emirhanAydinPortfolio/projects/fleetManagerRobotSimulation/filo_analiz_raporu.png'
         ],
 
         // Demo/Live site linki (opsiyonel)
