@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { FiGlobe, FiMenu, FiX } from 'react-icons/fi';
+import { FiGlobe, FiMenu, FiX, FiZap } from 'react-icons/fi';
 import { useLanguage } from '../context/LanguageContext';
 import './Navbar.css';
 
@@ -43,13 +43,63 @@ export default function Navbar() {
             transition={{ duration: 0.5, ease: 'easeOut' }}
         >
             <div className="navbar__container">
+                {/* Horizontal Lightning Animation */}
+                <div className="navbar__lightning-track">
+                    <motion.div
+                        className="navbar__lightning-bolt"
+                        animate={{
+                            x: ['0%', '100%'],
+                            opacity: [0, 1, 1, 0]
+                        }}
+                        transition={{
+                            duration: 2.5,
+                            repeat: Infinity,
+                            ease: 'easeInOut',
+                            repeatDelay: 0.5
+                        }}
+                    />
+                    <motion.div
+                        className="navbar__lightning-bolt navbar__lightning-bolt--delayed"
+                        animate={{
+                            x: ['0%', '100%'],
+                            opacity: [0, 0.6, 0.6, 0]
+                        }}
+                        transition={{
+                            duration: 2.5,
+                            repeat: Infinity,
+                            ease: 'easeInOut',
+                            delay: 1.2,
+                            repeatDelay: 0.5
+                        }}
+                    />
+                </div>
+
                 <motion.a
                     href="#home"
                     className="navbar__logo"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                 >
-                    Emirhan Aydın
+                    <motion.span
+                        className="navbar__logo-bolt"
+                        animate={{
+                            opacity: [0.4, 1, 0.4],
+                            scale: [0.9, 1.1, 0.9],
+                            filter: [
+                                'drop-shadow(0 0 2px #8b5cf6)',
+                                'drop-shadow(0 0 12px #8b5cf6) drop-shadow(0 0 20px #06b6d4)',
+                                'drop-shadow(0 0 2px #8b5cf6)'
+                            ]
+                        }}
+                        transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: 'easeInOut'
+                        }}
+                    >
+                        <FiZap />
+                    </motion.span>
+                    <span className="navbar__logo-text">Emirhan Aydın</span>
                 </motion.a>
 
                 <div className="navbar__right">

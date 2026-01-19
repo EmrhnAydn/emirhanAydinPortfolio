@@ -11,7 +11,7 @@ export const translations = {
     hero: {
       greeting: 'Hello, I am',
       name: 'Emirhan Aydın',
-      title: 'Software Developer',
+      title: 'Computer Engineer and Software Developer',
       description: 'Passionate about creating elegant solutions to complex problems. Building the future one line of code at a time.',
       cta: 'View My Work',
     },
@@ -54,7 +54,7 @@ export const translations = {
         },
         {
           name: 'Technologies',
-          items: ['Git', 'Docker', 'Linux', 'CUDA', 'TensorFlow', 'PyTorch', 'LangChain', 'FAISS', "Flask", "Django", "Aspnet Core", "Arduino", ""],
+          items: ['Git', 'Docker', 'Linux', 'CUDA', 'TensorFlow', 'PyTorch', 'LangChain', 'FAISS', "Flask", "Django", "Aspnet Core", "Arduino"],
         },
         {
           name: 'Frontend',
@@ -101,7 +101,7 @@ export const translations = {
     hero: {
       greeting: 'Merhaba, ben',
       name: 'Emirhan Aydın',
-      title: 'Yazılım Geliştirici',
+      title: 'Bilgisayar Mühendisi ve Yazılım Geliştirici',
       description: 'Karmaşık problemlere zarif çözümler üretmeye tutkuyla bağlıyım. Geleceği kod kod inşa ediyorum.',
       cta: 'Çalışmalarımı Gör',
     },
@@ -144,7 +144,7 @@ export const translations = {
         },
         {
           name: 'Technologies',
-          items: ['Git', 'Docker', 'Linux', 'CUDA', 'TensorFlow', 'PyTorch', 'LangChain', 'FAISS', "Flask", "Django", "Aspnet Core", "Arduino", ""],
+          items: ['Git', 'Docker', 'Linux', 'CUDA', 'TensorFlow', 'PyTorch', 'LangChain', 'FAISS', "Flask", "Django", "Aspnet Core", "Arduino"],
         },
         {
           name: 'Frontend',
