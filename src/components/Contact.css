@@ -1,0 +1,115 @@
+.contact__subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.125rem;
+    margin-bottom: 3rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.contact__social-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact__social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 3rem;
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+}
+
+.contact__social-link:hover {
+    border-color: var(--border-accent);
+}
+
+.contact__social-icon {
+    font-size: 2.5rem;
+    color: var(--icon-color, var(--text-primary));
+    transition: transform var(--transition-fast);
+}
+
+.contact__social-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.contact__cv-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2.5rem;
+    background: var(--gradient-primary);
+    border: none;
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact__cv-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.contact__cv-button:hover::before {
+    left: 100%;
+}
+
+.contact__cv-icon {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .contact__social-links {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .contact__social-link {
+        flex-direction: row;
+        padding: 1.25rem 2rem;
+        justify-content: center;
+    }
+
+    .contact__social-icon {
+        font-size: 2rem;
+    }
+
+    .contact__cv-button {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+}

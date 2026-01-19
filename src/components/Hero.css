@@ -1,0 +1,212 @@
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem 2rem 4rem;
+    overflow: hidden;
+}
+
+.hero__bg-elements {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.hero__glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+}
+
+.hero__glow--1 {
+    width: 600px;
+    height: 600px;
+    background: var(--accent-primary);
+    top: -150px;
+    right: -150px;
+}
+
+.hero__glow--2 {
+    width: 500px;
+    height: 500px;
+    background: #6366f1;
+    bottom: -100px;
+    left: -150px;
+}
+
+.hero__grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+}
+
+.hero__particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-primary);
+}
+
+.hero__content {
+    position: relative;
+    text-align: center;
+    max-width: 800px;
+    z-index: 1;
+}
+
+.hero__greeting {
+    font-size: 1.25rem;
+    color: var(--accent-primary);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.hero__name {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hero__letter {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 50%, var(--accent-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: transform 0.2s ease;
+}
+
+.hero__letter:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+.hero__title {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    margin-bottom: 1.5rem;
+}
+
+.hero__title-text {
+    background: linear-gradient(90deg, var(--accent-primary), #6366f1, var(--accent-secondary), var(--accent-primary));
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+.hero__description {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 500px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+}
+
+.hero__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: var(--gradient-primary);
+    border: none;
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero__cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.hero__cta:hover::before {
+    left: 100%;
+}
+
+.hero__cta-icon {
+    font-size: 1.25rem;
+}
+
+.hero__scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hero__scroll-mouse {
+    width: 24px;
+    height: 40px;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+    transition: border-color var(--transition-fast);
+}
+
+.hero__scroll-mouse:hover {
+    border-color: var(--accent-primary);
+}
+
+.hero__scroll-wheel {
+    width: 4px;
+    height: 8px;
+    background: var(--accent-primary);
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 6rem 1rem 3rem;
+    }
+
+    .hero__greeting {
+        font-size: 1rem;
+    }
+
+    .hero__description {
+        font-size: 0.9375rem;
+    }
+
+    .hero__cta {
+        padding: 0.875rem 1.75rem;
+        font-size: 0.9375rem;
+    }
+
+    .hero__scroll-indicator {
+        bottom: 1.5rem;
+    }
+
+    .hero__particle {
+        display: none;
+    }
+}
