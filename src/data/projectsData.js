@@ -253,9 +253,9 @@ export const projects = [
         },
         tech: ['Web Scraping', 'Python'],
         github: {
-            url: 'https://github.com/EmrhnAydn/emirhanAydinPortfolio',
+            url: 'https://github.com/EmrhnAydn/testDataCreator',
             owner: 'EmrhnAydn',
-            repo: 'emirhanAydinPortfolio',
+            repo: 'testDataCreator',
             showReadme: true
         },
         images: [],
@@ -337,9 +337,9 @@ export const projects = [
         },
         tech: ['Python', 'NLP', 'Sentiment Analysis', 'Machine Learning'],
         github: {
-            url: 'https://github.com/EmrhnAydn/emirhanAydinPortfolio',
+            url: 'https://github.com/EmrhnAydn/Turkish-NLP-SentimentAnalysis',
             owner: 'EmrhnAydn',
-            repo: 'emirhanAydinPortfolio',
+            repo: 'Turkish-NLP-SentimentAnalysis',
             showReadme: true
         },
         images: [],
@@ -475,7 +475,7 @@ export const projects = [
         github: {
             url: 'https://github.com/EmrhnAydn/reserveAreaDetermination',
             owner: 'EmrhnAydn',
-            repo: 'emirhanAydinPortfolio',
+            repo: 'reserveAreaDetermination',
             showReadme: true
         },
         images: [],
@@ -502,7 +502,7 @@ export const projects = [
         github: {
             url: 'https://github.com/EmrhnAydn/SocialMediaDataAnalysis',
             owner: 'EmrhnAydn',
-            repo: 'emirhanAydinPortfolio',
+            repo: 'SocialMediaDataAnalysis',
             showReadme: true
         },
         images: [],
@@ -529,7 +529,7 @@ export const projects = [
         github: {
             url: 'https://github.com/EmrhnAydn/AVehicleRentalProgram',
             owner: 'EmrhnAydn',
-            repo: 'emirhanAydinPortfolio',
+            repo: 'AVehicleRentalProgram',
             showReadme: true
         },
         images: [],
