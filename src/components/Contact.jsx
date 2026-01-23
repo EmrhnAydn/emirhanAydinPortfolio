@@ -78,7 +78,7 @@ export default function Contact() {
                     </div>
 
                     <motion.a
-                        href="/Emirhan_Aydin_CV.pdf"
+                        href={`${import.meta.env.BASE_URL}Emirhan_Aydin_CV.pdf`}
                         download
                         className="contact__cv-button"
                         initial={{ opacity: 0, y: 30 }}
