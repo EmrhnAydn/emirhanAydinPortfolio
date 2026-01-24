@@ -77,7 +77,7 @@ export const projects = [
             en: 'In the Agentic Café Chatbot project using a local LLM, users can chat with the chatbot and, with attention to natural language, add and remove any number of products to and from the cart, make purchases, and receive coffee recommendations; free APIs from platforms such as Groq and Ollama were used, along with FAISS and LangChain.',
             tr: 'Yerel LLM ile Ajantik Kafe Chatbotu projesinde kullanıcı chatbot ile sohbet ederek doğal dile dikkat edilerek sepete istenilen kadar ürün ekleme ve çıkarma, satın alma, kavhe önerme gibi özellikler sunulmuştur groq ve ollama gibi api plartformlarından ücretsiz apiler ve faiss ve langchain kullanılmıştır.'
         },
-        tech: ['C#', 'ASP.NET Core', 'Firebase'],
+        tech: ['Python', 'LangChain', 'Ai Agents', 'Groq'],
         github: null,
         images: [],
         liveUrl: null,
@@ -92,7 +92,7 @@ export const projects = [
     {
         id: 'llamaCultureChatbot',
         title: {
-            en: 'Llama Entelectuel Chatbot',
+            en: 'Llama Intellectual Chatbot',
             tr: 'Llama Entelektüel Chatbot'
         },
         description: {
@@ -168,14 +168,14 @@ export const projects = [
     {
         id: 'fleetManagerRobotSimulation',
         title: {
-            en: 'Fleet Manager Robot Simulation in Matlab App Desinger',
-            tr: 'Matlab App Desinger ile Filo Yönetim Robot Simülasyonu'
+            en: 'Fleet Manager Robot Simulation in Matlab App Designer',
+            tr: 'Matlab App Designer ile Filo Yönetim Robot Simülasyonu'
         },
         description: {
             en: 'This project is an advanced MATLAB application offering a comprehensive fleet management and simulation environment for multi-robot systems. It allows users to create dynamic map scenarios, manage autonomous mobile robots (AMR), and analyze the performance of various path planning algorithms.',
             tr: 'Bu proje, çoklu robot sistemleri için kapsamlı bir filo yönetim ve simülasyon ortamı sunan gelişmiş bir MATLAB uygulamasıdır. Kullanıcılara dinamik harita senaryoları oluşturma, otonom mobil robotları (AMR) yönetme ve çeşitli rota planlama algoritmalarının performansını analiz etme imkanı tanır.'
         },
-        tech: ['Matlab', 'App Desinger', 'Simulink'],
+        tech: ['Matlab', 'App Designer', 'Simulink'],
 
         // GitHub bilgileri (opsiyonel)
         github: {
@@ -216,12 +216,12 @@ export const projects = [
     {
         id: 'Zoo-Classifaction',
         title: {
-            en: 'Zoo Classifaction Model in Flask Web Site',
-            tr: 'Flask Web uygulaması ile Hayvan Sııflandırma'
+            en: 'Zoo Classification  Model in Flask Web Site',
+            tr: 'Flask Web uygulaması ile Hayvan Sınıflandırma'
         },
         description: {
             en: 'Zoo classifaction with ViT',
-            tr: 'ViT ile Hayvan Sııflandırma'
+            tr: 'ViT ile Hayvan Sınıflandırma'
         },
         tech: ['Flask', 'Python', 'ViT', 'Machine Learning', 'HTML', 'CSS'],
         github: {
@@ -234,7 +234,7 @@ export const projects = [
         liveUrl: null,
         visibility: 'public',
         longDescription: {
-            en: 'Zoo classifaction with ViT',
+            en: 'Zoo Classification  with ViT',
             tr: 'ViT ile Hayvan Sııflandırma'
         }
     },
@@ -244,7 +244,7 @@ export const projects = [
     {
         id: 'test-data-creator',
         title: {
-            en: 'Web Scraping for Zoo Classifaction Test Data',
+            en: 'Web Scraping for Zoo Classification Test Data',
             tr: 'Hayvan Sınıflandırması için Test Verisi Web Kazıma Uygulaması'
         },
         description: {
@@ -289,8 +289,8 @@ export const projects = [
         liveUrl: null,
         visibility: 'public',
         longDescription: {
-            en: 'A modern, responsive portfolio website showcasing my projects and skills.',
-            tr: 'Projelerimi ve yeteneklerimi sergileyen modern, responsive portfolyo sitesi.'
+            en: 'This project is designed to Flask and SQLite. It determines the area of expertise of the article with NLP and ensures that it is directed to the appropriate referee. It encrypts the information of the article authors with AES and detects and blurs the images of the authors with Poppler. In this way, anonymization is ensured in the articles sent to the referee.',
+            tr: 'Bu proje Flask ve SQLite kullanılarak tasarlanmıştır. NLP ile makalenin uzmanlık alanını belirler ve uygun hakeme yönlendirilmesini sağlar. Makale yazarlarının bilgilerini AES ile şifreler ve Poppler kullanarak yazarların görsellerini tespit edip bulanıklaştırır. Bu sayede hakeme gönderilen makalelerde anonimleştirme sağlanır.'
         }
     },
 
@@ -546,12 +546,12 @@ export const projects = [
     {
         id: 'ugv-ground-controler',
         title: {
-            en: 'UGV Ground Controler Desktop Application',
-            tr: 'UGV yer bilgisayarı Masaüstü Uygulaması'
+            en: 'UGV Ground Controller Desktop Application',
+            tr: 'UGV Yer Kontrol Bilgisayarı Masaüstü Uygulaması'
         },
         description: {
             en: 'The UGV ground station Desktop Application developed with Windows Forms receives and visualizes telemetry data. It also enables remote control.',
-            tr: 'Windows Forms ile oluşturulmuş UGV yer bilgisayarı Masaüstü Uygulaması Telemetri verilerini alır ve görselleştirir. Ayrıca uzaktan kontrolü sağlar.'
+            tr: 'Windows Forms ile oluşturulmuş UGV yer kontrol bilgisayarı masaüstü uygulaması Telemetri verilerini alır ve görselleştirir. Ayrıca uzaktan kontrolü sağlar.'
         },
         tech: ['C#', 'Windows Forms'],
         github: null,
@@ -560,7 +560,7 @@ export const projects = [
         visibility: 'private',
         longDescription: {
             en: 'The UGV ground station Desktop Application developed with Windows Forms receives and visualizes telemetry data. It also enables remote control.',
-            tr: 'Windows Forms ile oluşturulmuş UGV yer bilgisayarı Masaüstü Uygulaması Telemetri verilerini alır ve görselleştirir. Ayrıca uzaktan kontrolü sağlar.'
+            tr: 'Windows Forms ile oluşturulmuş UGV yer kontrol bilgisayarı masaüstü uygulaması Telemetri verilerini alır ve görselleştirir. Ayrıca uzaktan kontrolü sağlar.'
         }
     },
 ];
