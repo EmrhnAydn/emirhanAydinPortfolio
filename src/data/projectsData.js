@@ -110,6 +110,53 @@ export const projects = [
         }
     },
 
+    {
+        id: 'labellingApp',
+        title: {
+            en: 'Safely Image Labeling, Analysis & Editing App',
+            tr: 'Güvenli Görüntü Etiketleme, Analiz ve Düzenleme Uygulaması'
+        },
+        description: {
+            en: 'This project is a comprehensive mobile image processing, labeling, and analysis application built with React Native (Expo) and Moondream AI. Users can perform AI-assisted object detection, segmentation, and detailed analysis on images captured via camera or selected from the gallery.',
+            tr: 'Bu proje, React Native (Expo) ve Moondream AI ile geliştirilmiş kapsamlı bir mobil görüntü işleme, etiketleme ve analiz uygulamasıdır. Kullanıcılar, kamera aracılığıyla çekilen veya galeriden seçilen görüntüler üzerinde yapay zeka destekli nesne tespiti, segmentasyon ve detaylı analiz işlemleri gerçekleştirebilirler.'
+        },
+        tech: ['React Native', 'Expo', 'Moondream AI', 'TyoeScript'],
+
+        // GitHub bilgileri (opsiyonel)
+        github: {
+            url: 'https://github.com/EmrhnAydn/labellingApp',
+            owner: 'EmrhnAydn',
+            repo: 'labellingApp',
+            showReadme: true
+        },
+
+        // Görseller (opsiyonel) - public klasöründe saklanacak
+        images: [
+            '/emirhanAydinPortfolio/projects/labellingApp/1.png',
+            '/emirhanAydinPortfolio/projects/labellingApp/2.png',
+            '/emirhanAydinPortfolio/projects/labellingApp/3.png',
+            '/emirhanAydinPortfolio/projects/labellingApp/4.png',
+            '/emirhanAydinPortfolio/projects/labellingApp/5.png',
+            '/emirhanAydinPortfolio/projects/labellingApp/6.png',
+            '/emirhanAydinPortfolio/projects/labellingApp/7.png',
+            '/emirhanAydinPortfolio/projects/labellingApp/8.png',
+            '/emirhanAydinPortfolio/projects/labellingApp/9.png',
+            '/emirhanAydinPortfolio/projects/labellingApp/10.png',
+            '/emirhanAydinPortfolio/projects/labellingApp/11.png'
+        ],
+
+        // Demo/Live site linki (opsiyonel)
+        liveUrl: 'https://expo.dev/artifacts/eas/boRBJy4m6TmgyMASrDNubC.aab',
+
+        // Proje görünürlüğü: 'public' | 'private'
+        visibility: 'public',
+
+        // Modal için uzun açıklama
+        longDescription: {
+            en: 'The application includes all the features expected from a modern mobile labeling tool:\nMultiple Input Methods:Instant photo capture via Camera or image selection from Gallery. AI-Powered Analysis (Moondream): Analyzes images using an advanced vision model.Various Labeling Modes:\n 📦 Bounding Box: Detect objects by enclosing them in boxes.\n📍 Point Marker: Focus on specific points.\n🎨 Segmentation: Pixel-based separation of object boundaries.\nSecure API Management: User-based API key storage and management.\nDark/Light Mode: User-friendly interface responsive to device themes.',
+            tr: 'Uygulama, modern bir mobil etiketleme aracından beklenen tüm özelliklere sahiptir:\nÇoklu Giriş Yöntemleri:Kamera aracılığıyla anlık fotoğraf çekimi veya Galeriden resim seçimi.Yapay Zeka Destekli Analiz (Moondream):Görüntüleri gelişmiş bir görsel model kullanarak analiz eder.Çeşitli Etiketleme Modları:\n 📦 Sınırlayıcı Kutu: Nesneleri kutular içine alarak tespit eder.\n📍 Nokta İşaretleyici: Belirli noktalara odaklanır.\n🎨 Segmentasyon: Nesne sınırlarının piksel tabanlı ayrıştırılması.\nGüvenli API Yönetimi: Kullanıcı tabanlı API anahtarı depolama ve yönetimi.\nKaranlık/Aydınlık Mod: Cihaz temalarına duyarlı kullanıcı dostu arayüz.'
+        }
+    },
 
     {
         id: 'Generate-Resume-LLM-Key-website',
